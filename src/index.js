@@ -32,22 +32,22 @@ function findTodo(user, id) {
 app.post('/users', (request, response) => {
   const { name, username } = request.body
   
-  const userExists = users.some((user) => user.username === username)
+  const userExists = users.find((user) => user.username === username)
 
   if (userExists) {
-    return response.status(409).json({ message: "User already exists!"})
+    return response.status(400).json({ error: "User already exists!"})
   }
 
-  const id = uuid()
-
-  users.push({
-    id,
+  const user = {
+    id: uuid(),
     name,
     username,
     todos: []
-  })
+  }
 
-  return response.status(201).json({ id: id })
+  users.push(user)
+
+  return response.status(201).json(user)
 });
 
 app.get('/todos', checksExistsUserAccount, (request, response) => {
