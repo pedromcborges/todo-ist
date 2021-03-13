@@ -1,4 +1,4 @@
-#Projeto de uma ToDo list 🔥
+# Projeto de uma ToDo list 🔥
 
 Essa será uma aplicação para gerenciar tarefas (em inglês *todos*). Será permitida a criação de um usuário com `name` e `username`, bem como fazer o CRUD de *todos*:
 
@@ -73,7 +73,7 @@ A rota deve receber, pelo header da requisição, uma propriedade `username` con
 
 A rota deve receber, pelo header da requisição, uma propriedade `username` contendo o username do usuário e excluir o *todo* que possuir um `id` igual ao `id` presente nos parâmetros da rota.
 
-##Middlewares da aplicação
+## Middlewares da aplicação
 
 ### checksExistsUserAccount
 
